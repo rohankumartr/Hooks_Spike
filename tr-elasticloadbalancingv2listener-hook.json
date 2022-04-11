@@ -1,0 +1,43 @@
+{
+    "typeName": "TR::elasticloadbalancingv2listener::Hook",
+    "description": "Elastic Load balancer sslpolicy verification hook",
+    "documentationUrl": "https://github.com/aws-cloudformation/example-sse-hook/blob/master/README.md",
+    "typeConfiguration": {
+        "properties": {
+            "secureSSLPolicies": {
+                "description": "List of Secure SSL policies",
+                 "type": "array"
+            },
+            "insecureSSLPolicies": {
+                "description": "List of SSL policies with weak Cipher suites",
+                 "type": "array"
+             }
+        },
+        "additionalProperties": false
+    },
+    "required": [],
+    "handlers": {
+        "preCreate": {
+            "targetNames": [
+                "AWS::ElasticLoadBalancingV2::Listener"
+            ],
+            "permissions": ["elasticloadbalancing:*",
+                "logs:*"]
+        },
+        "preUpdate": {
+            "targetNames": [
+                "AWS::ElasticLoadBalancingV2::Listener"
+            ],
+            "permissions": ["elasticloadbalancing:*",
+                "logs:*"]
+        },
+        "preDelete": {
+            "targetNames": [
+                "AWS::ElasticLoadBalancingV2::Listener"
+            ],
+            "permissions": ["elasticloadbalancing:*",
+                "logs:*"]
+        }
+    },
+    "additionalProperties": false
+}

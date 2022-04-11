@@ -1,0 +1,15 @@
+{
+    "properties": {
+        "secureSSLPolicies": {
+            "description": "List of Secure SSL policies",
+            "type": "array"
+        },
+        "insecureSSLPolicies": {
+            "description": "List of SSL policies with weak Cipher suites",
+            "type": "array"
+        }
+    },
+    "additionalProperties": false,
+    "definitions": {},
+    "typeName": "TR::elasticloadbalancingv2listener::Hook"
+}
